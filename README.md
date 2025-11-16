@@ -89,15 +89,19 @@ Enter the FULL path to the Ensembl ID to Gene Symbol mapping table (.csv with 'g
 Available Analysis Options:
  A: Data Import & Matrix Creation (Count, TPM, FPKM)
  B: Normalization (VST, optional Quantile)
- C: Quality Control Plots (Correlation Heatmap, Density, PCA)
- D: Differential Gene Expression (DESeq2) - REQUIRES COUNT FILE
- E: Gene Set/Pathway Analysis (Advanced)
+ C: Quality Control Plots (Correlation Plot, Density, PCA)
+ D: Differential Gene Expression (DESeq2)
+ E: Gene Set/Pathway Analysis
+   E1: Filter DEGs per pathway
+   E2: Heatmap per Pathway
+   E3: Enrichment Analysis & Over-Representation Analysis
+   E4: DEGs Heatmaps
+   E5: GSEA (Gene Set Enrichment Analysis)
  F: Shared/Unique Gene Lists
 
-Enter the letters for analyses to run (e.g., ABCDEF): E
-Choose expression matrix for downstream analysis (TPM/FPKM/VST): VST
+Enter the letters for analyses to run (e.g., ABCDEF):
+Choose expression matrix for downstream analysis (TPM/FPKM/VST):
 
-<img width="1031" height="322" alt="image" src="https://github.com/user-attachments/assets/e56face4-5bd8-4ea2-adc2-d3b0eabe5f1e" />
 
 ```
 
