@@ -97,7 +97,7 @@ Available Analysis Options:
    E3: Enrichment Analysis & Over-Representation Analysis
    E4: DEGs Heatmaps
    E5: GSEA (Gene Set Enrichment Analysis)
- F: Shared/Unique Gene Lists
+ F: Shared/Unique Gene Lists
 
 Enter the letters for analyses to run (e.g., ABCDEF):
 Choose expression matrix for downstream analysis (TPM/FPKM/VST):
