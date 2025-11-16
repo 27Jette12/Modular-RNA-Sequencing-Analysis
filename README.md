@@ -80,32 +80,25 @@ The following steps outline the execution order for the main parts of the analys
 This step reads your raw RSEM files and generates count, TPM, and FPKM matrices.
 
 ```R
-# Source the R script containing all functions
-source("Analysis_script.R") 
+--- RNA-Seq Analysis Pipeline ---
+Enter the FULL path to the folder containing RSEM (.genes.results) files:
+Enter a Project Name without white spaces: 
+Enter the FULL path to the Sample Metadata Table (.csv file with columns: sample, group, condition): 
+Enter the FULL path to the Ensembl ID to Gene Symbol mapping table (.csv with 'gene_id' and 'Gene_name'):                                                                                                                   
 
-# 1. Read RSEM files and build matrices (This executes 'read_rsem_files' and 'build_TPM_FPKM_matrix')
-files <- read_rsem_files(folder = folderPath_count_files)
-build_TPM_FPKM_matrix(files)
+Available Analysis Options:
+ A: Data Import & Matrix Creation (Count, TPM, FPKM)
+ B: Normalization (VST, optional Quantile)
+ C: Quality Control Plots (Correlation Heatmap, Density, PCA)
+ D: Differential Gene Expression (DESeq2) - REQUIRES COUNT FILE
+ E: Gene Set/Pathway Analysis (Advanced)
+ F: Shared/Unique Gene Lists
 
-# Load count file generated in Step 2A (replace with actual loading method if needed)
-count_file <- read.csv(paste0("~/Desktop/Analysis_RNA_Seq/", project_name, "/count_files/_count_genenames.csv"))
+Enter the letters for analyses to run (e.g., ABCDEF): E
+Choose expression matrix for downstream analysis (TPM/FPKM/VST): VST
 
-# 2. VST Normalization
-vst_data <- normalization_vst(sample_table, count_file, ensembl)
+<img width="1031" height="322" alt="image" src="https://github.com/user-attachments/assets/e56face4-5bd8-4ea2-adc2-d3b0eabe5f1e" />
 
-# 3. Correlation Heatmap
-correlation_plot(sample_table, vst_data)
-
-# 4. PCA Plot (Example using top 500 variable genes)
-# Assuming 'ntop' is defined in the script or passed as an argument
-plot_pca(sample_table, vst_data, gene_subset = 500, name_gene_set = "Top 500 Variable Genes")
-
-# 5. DGE Analysis
-differentially_expressed_genes(sample_table, count_file, list_of_comparisons, padj_treshold = 0.05)
-
-# 6. Find Unique and Shared Genes
-unique_gene_list <- unique_genes(sample_table, count_file)
-shared_gene_list <- shared_genes(sample_table, count_file)
 ```
 
 
