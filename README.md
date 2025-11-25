@@ -51,16 +51,23 @@ library(forcats)
 ```
 ## 📂 Input Data Requirements
 Depending on the module the script will prompt for the FULL path to the following required files:
-1. Project Name - A single, descriptive name for the output folder that shouldn't include white spaces or dots.
-2. RSEM files folder - The directory containing all individual `*.genes.results` files. E.g. moonG.genes.results
-3. Sample Metadata Table - A CSV file with columns including:
+
+**1. Project Name -** A single, descriptive name for the output folder that shouldn't include white spaces or dots.
+
+**2. RSEM files folder *(Example.gene.results)* -** The directory containing all individual `*.genes.results` files.
+
+**3. Sample Metadata Table *(Example_sample_table.csv)* -** A CSV file with columns including: 
    - First Column: Sample IDs (must match column names in expression matrices. Same order!)
    - Group: Primary factor for DESeq2 design (e.g. replicates in groups).
    - Condition: Additional factor for PCA plot grouping (e.g. control, treatment)
-4. Ensembl Mapping Table - A csv file with columns: gene_id (Ensembl ID), and Gene.name (Gene Symbol)
-5. DESeq2 Comparison Table (*Module D*) - A csv file defining contrasts with columns: `Factor` (should be Group), `Normal` (Reference Level), `Treatment` (Contrast Level)
-6. Pathway IDs Table (*Module E*) - A csv file with KEGG IDs for filtering and visualization.
-7. GMT File (*Module E5*) - FULL path to a downloaded MSigDB (c2, c5, etc.) or custom GMT file.
+
+**4. Ensembl Mapping Table *(ensembl_file_human.txt)* -** A csv file with columns: gene_id (Ensembl ID), and Gene.name (Gene Symbol)
+
+**5. DESeq2 Comparison Table (*Module D, Example: DESeq2_comparisons.csv*) -** A csv file defining contrasts with columns: `Factor` (should be Group), `Normal` (Reference Level), `Treatment` (Contrast Level) 
+
+**6. Pathway IDs Table (*Module E*) -** A csv file with KEGG IDs for filtering and visualization.
+
+**7. GMT File (*Module E5*) -** FULL path to a downloaded MSigDB (c2, c5, etc.) or custom GMT file.
 
 
 ## 📝 Usage
