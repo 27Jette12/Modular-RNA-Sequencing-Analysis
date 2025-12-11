@@ -733,7 +733,7 @@ run_analysis <- function() {
     rename(sample_id = 1) #ensure the first column is named for consistency !!!NEEDED?!!!
   
   #Load Ensembl Mapping Table (for mapping gene.ids to gene symbols)
-  ensembl_path <- get_user_input("Enter the FULL path to the Ensembl ID to Gene Symbol mapping table (.csv with 'gene_id' and 'Gene_name'): ")
+  ensembl_path <- get_user_input("Enter the FULL path to the Ensembl ID to Gene Symbol mapping table (.csv with 'gene_id' and 'Gene.name'): ")
   if (!file.exists(ensembl_path)) {
     stop("Error: Ensembl mapping file not found.")
   }
